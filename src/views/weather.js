@@ -79,7 +79,7 @@ const Weather = () => {
                   {data.weather.map((weather) => (
                     <>
                       <img
-                        src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+                        src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
                       />
                       <h5>{(data.main.temp - 273.15).toFixed(2)}&deg;F</h5>
                       {weather.description}

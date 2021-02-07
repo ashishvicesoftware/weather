@@ -37,10 +37,15 @@ const Weather = () => {
   const location = useGeoLocation();
   const [weatherdata, setWeatherData] = useState([]);
 
-  const lat = location.loaded ? JSON.stringify(location.coordinates.lat) : null;
-  const lng = location.loaded ? JSON.stringify(location.coordinates.lng) : null;
+  const lat =
+    location.loaded &&
+    location.coordinates &&
+    JSON.stringify(location.coordinates.lat);
+  const lng =
+    location.loaded &&
+    location.coordinates &&
+    JSON.stringify(location.coordinates.lng);
 
-  console.log(weatherdata);
   useEffect(() => {
     {
       lat &&
@@ -57,10 +62,8 @@ const Weather = () => {
     lat &&
       lng &&
       axiosMapInstance
-        .get(`api/geocode/json?latlng=${lat},${lng}&sensor=true'`)
-        .then((response) => {
-          console.log(response);
-        })
+        .get(`api/geocode/json?latlng=${lat},${lng}&sensor=true'`) // Not able to produce key without entering billing details
+        .then((response) => {})
         .catch((error) => {});
   }, [lat, lng]);
 

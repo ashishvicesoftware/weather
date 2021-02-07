@@ -1,11 +1,9 @@
 function authenticateComponents(WrappedComponent) {
   return class extends React.Component {
-    componentDidUpdate(prevProps) {
-      console.log("Current props: ", this.props);
-      console.log("Previous props: ", prevProps);
-    }
+    // in case we can use it to return only authentic component
+    componentDidUpdate(prevProps) {}
     render() {
-      // Wraps the input component in a container, without mutating it. Good!
+      // Wraps the input component in a container, without mutating it.
       return <WrappedComponent {...this.props} />;
     }
   };

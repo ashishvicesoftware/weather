@@ -4,8 +4,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useTranslation } from "react-i18next";
 
 const MainNav = () => {
-  const { user } = useAuth0();
   const { t, i18n } = useTranslation();
+  const { isAuthenticated } = useAuth0();
 
   return (
     <div className="navbar-nav mr-auto">
@@ -25,7 +25,7 @@ const MainNav = () => {
       >
         {t("weather.label")}
       </NavLink>
-      {user ? (
+      {isAuthenticated ? (
         <NavLink
           to="/logOut"
           exact
@@ -34,7 +34,16 @@ const MainNav = () => {
         >
           {t("logOut.label")}
         </NavLink>
-      ) : null}
+      ) : (
+        <NavLink
+          to="/log-in"
+          exact
+          className="nav-link"
+          activeClassName="router-link-exact-active"
+        >
+          {t("login.label")}
+        </NavLink>
+      )}
     </div>
   );
 };

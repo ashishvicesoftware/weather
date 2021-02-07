@@ -1,6 +1,7 @@
 {
     "weatherText.label": "अपने शहर का मौसम पाने के लिए मौसम पर क्लिक करें",
-    "home.label": "謝謝你",
-    "weather.label" : "Mausam",
-    "logOut.label" : "Nikal Jaa"
+    "home.label": "घर",
+    "weather.label" : "मौसम",
+    "logOut.label" : "लॉग आउट",
+    "login.label" : "लॉग इन करें"
   }

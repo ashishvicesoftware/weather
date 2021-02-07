@@ -31,8 +31,8 @@ const DropDown = () => {
     <div>
       <FormControl variant="filled" className={classes.formControl}>
         <InputLabel>Language</InputLabel>
-        <Select value={language} onChange={changeLanguage}>
-          <MenuItem value="">
+        <Select value={language} onChange={changeLanguage} defaultValue="">
+          <MenuItem value="None">
             <em>None</em>
           </MenuItem>
           <MenuItem value="en">English</MenuItem>
